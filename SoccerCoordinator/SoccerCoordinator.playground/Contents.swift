@@ -2,7 +2,7 @@
 
 import UIKit
 
-// Player Data
+// Player Data - represented by a dictionary
 
 let player1: [String: Any] = ["name": "Joe Smith", "Height": 42, "soccerExperience": true, "guardianNames": "Jim and Jan Smith"]
 let player2: [String: Any] = ["name": "Jill Tanner", "Height": 36, "soccerExperience": true, "guardianNames": "Clara Tanner"]
@@ -23,9 +23,12 @@ let player16: [String: Any] = ["name": "Phillip Helm", "Height": 44, "soccerExpe
 let player17: [String: Any] = ["name": "Les Clay", "Height": 42, "soccerExperience": true, "guardianNames": "Wynonna Brown"]
 let player18: [String: Any] = ["name": "Herschel Krustofski", "Height": 45, "soccerExperience": true, "guardianNames": "Hyman and Rachel Krustofski"]
 
+// A single collection of players
+
 var playersRoster = [player1, player2, player3, player4 ,player5, player6, player7, player8, player9, player10, player11, player12, player13, player14, player15, player16, player17, player18]
 
 // Sort players by experience
+
 var yesSoccerExperience: [[String: Any]] = []
 var noSoccerExperience: [[String: Any]] = []
 
@@ -36,12 +39,15 @@ for player in playersRoster {
         noSoccerExperience.append(player)
     }
 }
+
 // three teams
+
 var teamSharks: [[String: Any]] = []
 var teamRaptors: [[String: Any]] = []
 var teamDragons: [[String: Any]] = []
 
-// Sort experienced players into 3 different teams
+// Sort players with experience into 3 different teams
+
 for index in 0..<yesSoccerExperience.count {
     switch true {
     case index % 3 == 0:
@@ -55,7 +61,8 @@ for index in 0..<yesSoccerExperience.count {
     }
 }
 
-// Sort inexperienced players into 3 different teams
+// Sort players without experience into 3 different teams
+
 for index in 0..<noSoccerExperience.count {
     switch true {
     case index % 3 == 0:
@@ -68,6 +75,8 @@ for index in 0..<noSoccerExperience.count {
         break
     }
 }
+
+// Create letter information
 
 var letters: [String] = []
 
@@ -104,9 +113,12 @@ for player in playersRoster {
         }
     }
     
-    let letter = "Dear \(guardianNames), \n We are happy to inform you that your child, \(name) has made is on the \(team) team. \nThe first practice is at \(practice). It will be a fun and rewarding season. \nSincerely, the Team Coordinator"
+    let letter = "Dear \(guardianNames),\n We are happy to inform you that your child, \(name) has made is on the \(team) team. \nThe first practice is at \(practice). It will be a fun and rewarding season. \nSincerely, the Team Coordinator"
     letters.append(letter)
 }
+
+// Print player letters
+
 for letter in letters {
     print(letter)
 }
